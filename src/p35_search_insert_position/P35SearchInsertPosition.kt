@@ -11,35 +11,24 @@ fun searchInsert(nums: IntArray, target: Int): Int {
     var start = 0;
     var end = nums.size-1;
 
-    if (nums.isEmpty()) {
-        return 0
-    }
-
-    if (nums[0] > target) {
-        return 0
-    }
-
-    if (nums[nums.size - 1] < target) {
-        return nums.size
-    }
-
     while (start <= end) {
-        val mid = (start + end)/2
-        println(mid)
-        if (nums[mid] == target) {
-            return mid
+
+        /**
+         * If array length is big. mid = (start + end) / 2 may cause overflow  integer issue and can create
+         * ArrayIndexOutOfBoundException.
+         */
+        val pivot = start + (end - start) / 2
+
+        if (nums[pivot] == target) {
+            return pivot
         } else {
-            if (target < nums[mid]) {
-                if (mid > 0 && nums[mid-1] < target) {
-                    return mid
-                } else {
-                    end = mid;
-                }
+            if (nums[pivot] > target) {
+                end = pivot - 1
             } else {
-                start = mid + 1
+                start = pivot + 1
             }
         }
     }
 
-    return -1
+    return start;
 }
