@@ -5,7 +5,7 @@ fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
     val start = findStart(intervals, newInterval)
     val end = findEnd(intervals, newInterval, start)
 
-    if (intervals[start])
+    return arrayOf()
 }
 
 fun findStart(intervals: Array<IntArray>, newInterval: IntArray): Int {
