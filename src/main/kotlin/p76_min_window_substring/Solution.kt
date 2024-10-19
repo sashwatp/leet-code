@@ -12,6 +12,7 @@ fun main() {
 
 class Solution {
     fun minWindow(s: String, t: String): String {
+        // If the input string length is smaller than the
         if (s.length < t.length) {
             return ""
         } else if (t == "") {
