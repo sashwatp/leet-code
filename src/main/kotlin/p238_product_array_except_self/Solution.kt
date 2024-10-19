@@ -1,7 +1,7 @@
 package p238_product_array_except_self
 
 fun main() {
-    val intArray = intArrayOf(1 2, 4)
+    val intArray = intArrayOf(1, 2, 4)
 
     println(Solution().productExceptSelf(intArray).joinToString(","))
 }
