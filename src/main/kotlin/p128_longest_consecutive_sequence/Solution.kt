@@ -1,7 +1,9 @@
 package p128_longest_consecutive_sequence
 
 import kotlin.math.max
-
+/**
+ *  
+ */
 fun main() {
     val intArray = intArrayOf(100, 4, 200, 1, 3, 2)
     println(Solution().longestConsecutive(intArray))
